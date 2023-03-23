@@ -8,10 +8,13 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f4f8;
   margin: 0;
   box-sizing: border-box;
+}
+.explore {
+  padding-bottom: 75px;
 }
 
 a {
@@ -59,7 +62,7 @@ button {
 
 .primaryButton {
   cursor: pointer;
-  background: #007aff;
+  background: #0351a5;
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -121,7 +124,7 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #007aff transparent #007aff transparent;
+  border-color: #0351a5 transparent #0351a5 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -145,7 +148,7 @@ button {
   bottom: 0;
   right: 0;
   height: 85px;
-  background-color: #ffffff;
+  background-color: #0351a5;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -178,7 +181,7 @@ button {
   margin-top: 0.25rem;
   font-size: 14px;
   font-weight: 600;
-  color: #8f8f8f;
+  color: white;
 }
 .navbarListItemNameActive {
   color: #2c2c2c;
@@ -213,7 +216,7 @@ button {
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #007aff;
+  color: #0351a5;
   font-weight: 600;
   text-align: right;
 }
@@ -253,7 +256,7 @@ button {
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: #007aff;
+  background-color: #0351a5;
   border-radius: 50%;
 }
 @media (min-width: 1024px) {
@@ -290,7 +293,7 @@ button {
 
 .registerLink {
   margin-top: 4rem;
-  color: #007aff;
+  color: #0351a5;
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
@@ -410,6 +413,8 @@ button {
 
 .categoryListingLink {
   display: flex;
+  width: 100%;
+  align-items: center;
 }
 
 .categoryListingImg {
@@ -453,7 +458,7 @@ button {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #007aff;
+  color: #0351a5;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -504,7 +509,24 @@ button {
 }
 
 .listingDetails {
-  margin-bottom: 10rem;
+  margin-bottom: 1rem;
+}
+
+.listingDetails h4 {
+  margin: 5px;
+}
+.listingInfo {
+  margin: 5px;
+}
+.listingDetails span {
+  margin-top:5px;
+}
+.listingDetails .listingTags {
+  margin-top:10px
+}
+.listingDetails .listingInfo.time{
+  font-size: .75rem;
+  color: #777
 }
 
 .shareIconDiv {
@@ -547,7 +569,7 @@ button {
 }
 .listingType {
   padding: 0.25rem 0.5rem;
-  background-color: #007aff;
+  background-color: #0351a5;
   color: #ffffff;
   border-radius: 2rem;
   display: inline;
@@ -647,7 +669,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #007aff;
+  background-color: #0351a5;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
@@ -665,7 +687,7 @@ button {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #007aff;
+  color: #0351a5;
 }
 
 .profileCard {
@@ -762,8 +784,7 @@ button {
   min-width: 75px;
 }
 .formButtonActive {
-  background-color: #007aff;
-  background-color: #007aff;
+  background-color: #0351a5;
   color: #ffffff;
 }
 
@@ -818,7 +839,7 @@ button {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #007aff;
+  background-color: #0351a5;
   border: none;
   color: #ffffff;
   font-weight: 600;
@@ -843,4 +864,48 @@ button {
   margin-left: 1rem;
   font-size: 0.8rem;
   opacity: 0.75;
+}
+
+/* Custom Explore Styles  */
+
+.explore .categoryListing .noImage,.explore .categoryListing .categoryListingImg {
+  width: 50px;
+  height: 50px;
+  border-radius:50%;
+  object-fit: cover;
+  min-width: auto;
+  font-size: .5rem;
+}
+.explore .categoryListing .categoryListingDetails {
+  width: 82%
+}
+.explore .categoryListing .categoryListingName {
+  font-weight: 500;
+  font-size: .9rem;
+  margin-bottom: 0;
+}
+.explore .categoryListing .listingLake {
+  color:#777;
+}
+.explore .categoryListing .listingSpecies {
+  margin-top: 0;
+}
+.explore .categoryListing .listingName, .explore .categoryListing .listingLake {
+  display: inline-flex;
+}
+.explore .categoryListing .listingLake {
+  margin-left: 10px;
+}
+.explore .categoryListing .infoTags {
+  display: none;
+}
+
+.noImage {
+  width: 100px;
+  height: 100px;
+  background: #777;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

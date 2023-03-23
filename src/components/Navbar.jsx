@@ -18,15 +18,15 @@ function Navbar() {
         <nav className="navbarNav">
             <ul className="navbarListItems">
                 <li className="navbarListItem" onClick={() => navigate('/')}>
-                    <ExploreIcon fill={pathMatchRoute('/') ? '#2c2c2c' : '#8f8f8f'} width="36px" height="36px"/> 
+                    <ExploreIcon fill={pathMatchRoute('/') ? '#2c2c2c' : 'white'} width="36px" height="36px"/> 
                     <p className={pathMatchRoute('/') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Catches</p>
                 </li>
                 <li className="navbarListItem" onClick={() => navigate('/add-catch')}>
-                    <PersonOutlineIcon fill={pathMatchRoute('/add-catch') ? '#2c2c2c' : '#8f8f8f'} width="36px" height="36px"/>
+                    <PersonOutlineIcon fill={pathMatchRoute('/add-catch') ? '#2c2c2c' : 'white'} width="36px" height="36px"/>
                     <p className={pathMatchRoute('/add-catch') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Add Fish</p>
                 </li>
                 <li className="navbarListItem" onClick={() => navigate('/offer')}>
-                    <OfferIcon fill={pathMatchRoute('/offer') ? '#2c2c2c' : '#8f8f8f'} width="36px" height="36px"/>
+                    <OfferIcon fill={pathMatchRoute('/offer') ? '#2c2c2c' : 'white'} width="36px" height="36px"/>
                     <p className={pathMatchRoute('/offer') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Favorites</p>
                 </li>
 

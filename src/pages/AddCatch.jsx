@@ -453,7 +453,7 @@ function AddCatch() {
           id='images'
           onChange={onMutate}
           max='2'
-          accept='.jpeg,.png,.jpg'
+          accept='image/*'
           multiple
         />
 

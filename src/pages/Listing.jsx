@@ -6,6 +6,8 @@ import { getDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import shareIcon from '../assets/svg/shareIcon.svg'
 
+import LakeMap from '../assets/jpg/map.png'
+
 function Listing() {
     const [listing, setListing] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -48,16 +50,34 @@ function Listing() {
             {shareLinkCopied && <p className='linkCopied'>Link Copied!</p>}
             
             <img alt={listing.name} style={{width: '100%'}} src={listing.imageUrls} />
-            <p className='listingName'>
-                {listing.name} 
-                </p>
-            <div className="listingDetails">
-                <p className='listingLocation'>{listing.lake}</p>
-                <p className='listingType'>{listing.species}</p>                
-                <p className='listingType'>{listing.weight}</p>  
-                <p className='listingType'>{listing.type}</p>
-                <p className='listingType'>{listing.lure}</p>  
-                <p className='listingType'>{listing.time}</p>  
+            <div>
+                <div className="listingDetails">
+                    <div className="flex">
+                        <h4 className='listingInfo'>{listing.species}</h4> 
+                        <span> - </span> 
+                        <div className="flex">
+                            <p className='listingInfo'>{listing.fishLength} inches</p> 
+                            <p className='listingInfo'>{listing.weight} pounds</p> 
+                        </div>
+                    </div>   
+                    <div className="flex">
+                        <h4 className='listingInfo'>{listing.lake}</h4>  
+                        <span> - </span> 
+                        <h4 className='listingInfo'>{listing.name}</h4>                      
+                    </div> 
+                    <div className="flex">
+                        <p className='listingInfo time'>{listing.date}</p>   
+                        <p className='listingInfo time'>{listing.time}</p>  
+                    </div>
+                    <div className="flex listingTags">
+                        <p className='listingType'>{listing.type}</p>
+                        <p className='listingType'>{listing.lure}</p>  
+                    </div>
+                </div>
+                <div className="mapDetails">
+                <img alt="Lake Map" style={{width: '100%'}} src={LakeMap} />
+
+                </div>
             </div>
     </main>
   )

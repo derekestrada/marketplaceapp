@@ -1,12 +1,13 @@
 import {Link} from 'react-router-dom'
 import {ReactComponent as DeleteIcon} from '../assets/svg/deleteIcon.svg'
+import {ReactComponent as StarIcon} from '../assets/svg/starIcon.svg'
 
 function ListingItem({listing, id, onDelete}) {
   return (
    <li className="categoryListing">
        <Link to={`/category/${listing.type}/${id}`} className="categoryListingLink">
             {listing.imageUrls === undefined ?
-             <div style={{width: '100px', height: '100px', background: '#777', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}}><p>No Image</p></div>
+             <div className="noImage"><p>No Image</p></div>
             :
             <img 
                 src={listing.imageUrls[0]}
@@ -17,25 +18,35 @@ function ListingItem({listing, id, onDelete}) {
 
             <div className="categoryListingDetails">
                
-                <p className="categoryListingName">
+                <p className="categoryListingName listingName">
                     {listing.name}
                 </p>
-                <p className="categoryListingName">
+                <p className="categoryListingName listingLake">
                     {listing.lake}
                 </p>
                 <p className="categoryListingLocation listingSpecies">
                     {listing.species}
                 </p>
-                <div className="categoryListingInfoDiv noJustify">
+                <div className="categoryListingInfoDiv listingSize noJustify">
                     <p className="categoryListingInfoName">{listing.fishLength} inches</p>
                     <p className="categoryListingInfoName listingWeight">{listing.weight === undefined ? '' : '- ' + listing.weight + 'lbs'}</p>
                 </div>
-                <div className="categoryListingInfoDiv noJustify">
+                <div className="categoryListingInfoDiv infoTags noJustify">
                     <p className="listingType">{listing.type}</p>
                     <p className="listingType">{listing.lure}</p>
                     <p className="listingType">{listing.date}</p>
                 </div>
             </div>
+            {listing.offer ? (
+                <StarIcon 
+                    className='starIcon'
+                    fill='#0351a5'
+                    width='15px' 
+                    height='15px'
+                />
+            ) : (
+                ''
+            )}
        </Link>
 
        {onDelete && ( 
