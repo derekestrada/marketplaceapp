@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+// import {useParams} from 'react-router-dom'
 
-import {collection, getDocs, query, where, orderBy, limit, startAfter} from 'firebase/firestore'
+import {collection, getDocs, query, where, orderBy, limit} from 'firebase/firestore'
 import {db} from '../firebase.config'
 import {toast} from 'react-toastify'
 import ListingItem from './../components/ListingItem'
@@ -9,8 +9,6 @@ import ListingItem from './../components/ListingItem'
 function Offers() {
     const [listings, setListings] = useState(null)
     const loading = false
-
-    const params = useParams()
 
     useEffect(() => {
         const fetchListings = async () => {
@@ -20,7 +18,8 @@ function Offers() {
 
                 const q = query(
                     listingsRef, 
-                    orderBy('fishLength', 'desc'), 
+                    where('offer', '==', true), 
+                    orderBy('timestamp', 'desc'), 
                     limit(10)
                 )
                 const querySnap = await getDocs(q)

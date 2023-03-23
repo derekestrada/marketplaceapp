@@ -43,8 +43,8 @@ function AddCatch() {
     weight,
     notes,
     images,
-    latitude,
-    longitude,
+    // latitude,
+    // longitude,
     type,
     lure,
     lake,
@@ -83,15 +83,15 @@ function AddCatch() {
       return
     }
 
-    let geolocation = {}
-    let location
+    // let geolocation = {}
+    // let location = {}
 
-    if (geolocationEnabled) {
-        console.log('geo')
-    } else {
-      geolocation.lat = latitude
-      geolocation.lng = longitude
-    }
+    // if (geolocationEnabled) {
+    //     console.log('geo')
+    // } else {
+    //   geolocation.lat = latitude
+    //   geolocation.lng = longitude
+    // }
 
     // Store image in firebase
     const storeImage = async (image) => {

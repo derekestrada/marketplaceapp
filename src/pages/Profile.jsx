@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import {Link} from 'react-router-dom'
  
 import {useNavigate} from 'react-router-dom'
-import { async } from '@firebase/util'
+// import { async } from '@firebase/util'
 
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import homeIcon from '../assets/svg/homeIcon.svg'

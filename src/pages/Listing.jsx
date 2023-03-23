@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { getDoc, doc } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+// import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
 import shareIcon from '../assets/svg/shareIcon.svg'
 
@@ -13,7 +13,7 @@ function Listing() {
   
     const navigate = useNavigate()
     const params = useParams()
-    const auth = getAuth()
+    // const auth = getAuth()
   
     useEffect(() => {
       const fetchListing = async () => {
@@ -47,7 +47,7 @@ function Listing() {
             </div>
             {shareLinkCopied && <p className='linkCopied'>Link Copied!</p>}
             
-            <img style={{width: '100%'}} src={listing.imageUrls} />
+            <img alt={listing.name} style={{width: '100%'}} src={listing.imageUrls} />
             <p className='listingName'>
                 {listing.name} 
                 </p>
