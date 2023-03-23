@@ -17,6 +17,10 @@ const firebaseConfig = {
   measurementId: "G-B0E4GJQKEZ"
 };
 
+/* eslint-disable no-unused-vars */
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
+
+/* eslint-disable no-unused-vars */
