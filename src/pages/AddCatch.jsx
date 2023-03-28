@@ -11,17 +11,24 @@ import { db } from '../firebase.config'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
+import { MapContainer, Marker, TileLayer, useMapEvents,} from 'react-leaflet'
+import "leaflet/dist/leaflet.css"
+
+import marker from '../assets/svg/fish.svg';
+import { Icon } from 'leaflet'
 
 
 
 function AddCatch() {
   // eslint-disable-next-line
-  const [geolocationEnabled, setGeolocationEnabled] = useState(false)
+  const [position, setPosition] = useState([44.56975401408825, -83.81710052490236])
+
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     species: '',
-    fishLength: '',
+    fishLength: 0,
+    weight: 0,
     time: "",
     date: "",
     images: {},
@@ -31,7 +38,8 @@ function AddCatch() {
     lure: '',
     lake: '',
     notes: '',
-    offer: true
+    offer: true,
+    showMap: false
   })
 
   const {
@@ -43,12 +51,13 @@ function AddCatch() {
     weight,
     notes,
     images,
-    // latitude,
-    // longitude,
+    latitude,
+    longitude,
     type,
     lure,
     lake,
-    offer
+    offer,
+    showMap
   } = formData
 
   const auth = getAuth()
@@ -72,6 +81,26 @@ function AddCatch() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMounted])
 
+  const mapIcon = new Icon({
+    iconUrl: marker,
+    iconSize: [32,32]
+   })
+
+const LocationFinderDummy = () => {
+  const map = useMapEvents({
+    click(e) {
+      console.log(e.latlng);
+      setPosition(e.latlng)
+      setFormData((prevState) => ({
+        ...prevState,
+        latitude: e.latlng.lat,
+        longitude: e.latlng.lng
+      }))
+    },
+  });
+    return null;
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault()
 
@@ -79,19 +108,9 @@ function AddCatch() {
 
     if (images.length > 2) {
       setLoading(false)
-      toast.error('Max 6 images')
+      toast.error('Max 2 images')
       return
     }
-
-    // let geolocation = {}
-    // let location = {}
-
-    // if (geolocationEnabled) {
-    //     console.log('geo')
-    // } else {
-    //   geolocation.lat = latitude
-    //   geolocation.lng = longitude
-    // }
 
     // Store image in firebase
     const storeImage = async (image) => {
@@ -179,10 +198,10 @@ function AddCatch() {
     let boolean = null
 
     if (e.target.value === 'true') {
-      boolean = true
+      boolean = false
     }
     if (e.target.value === 'false') {
-      boolean = false
+      boolean = true
     }
 
     // Files
@@ -225,7 +244,7 @@ function AddCatch() {
           required
         />
 
-        <label className='formLabel'>Lake</label>
+        <label data-longitude={longitude} data-latitude={latitude} className='formLabel'>Lake</label>
           <input
             className='formInputName'
             type='text'
@@ -235,6 +254,20 @@ function AddCatch() {
             placeholder='Lake'
             required
           />
+        {lake.length > 0 ? <><input onChange={onMutate} type="checkbox" id="showMap" value={showMap}/> <label className='formLabel exactLocation'>Set Exact Location?</label></> : ""}
+        {showMap ? 
+          (                
+          <div className="mapDetails" style={{height: '300px', overflow:'hidden'}}>
+            <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+              <TileLayer
+              url="https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+              subdomains={['mt1','mt2','mt3']}
+              />
+                <Marker position={position} icon={mapIcon}></Marker>
+                <LocationFinderDummy/>
+              </MapContainer> 
+          </div>
+          ) : ('')}
 
         <label className='formLabel'>Species</label>
         <select onChange={onMutate} className='formInputName' value={species} name={species} id="species">
@@ -247,15 +280,7 @@ function AddCatch() {
           <option value="Crappie">Crappie</option>
           <option value="Other">Other</option>
         </select>
-          {/* <input
-            className='formInputName'
-            type='text'
-            id='species'
-            value={species}
-            onChange={onMutate}
-            placeholder='Species'
-            required
-          /> */}
+
 
         <div className='formSize flex'>
           <div>
