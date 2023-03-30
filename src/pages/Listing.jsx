@@ -4,7 +4,7 @@ import { getDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import shareIcon from '../assets/svg/shareIcon.svg'
 
-import { MapContainer, Marker, TileLayer, useMapEvents,} from 'react-leaflet'
+import { MapContainer, Marker, TileLayer} from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
 
 import marker from '../assets/svg/fish.svg';

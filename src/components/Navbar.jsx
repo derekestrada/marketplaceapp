@@ -1,5 +1,4 @@
 import {useNavigate, useLocation} from 'react-router-dom'
-import {ReactComponent as PersonOutlineIcon} from '../assets/svg/personOutlineIcon.svg'
 
 import { GiFishBucket } from "react-icons/gi"
 import { GiFishing } from 'react-icons/gi'

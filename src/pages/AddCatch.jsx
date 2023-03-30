@@ -85,8 +85,8 @@ function AddCatch() {
     iconUrl: marker,
     iconSize: [32,32]
    })
-
 const LocationFinderDummy = () => {
+  // eslint-disable-next-line
   const map = useMapEvents({
     click(e) {
       console.log(e.latlng);
