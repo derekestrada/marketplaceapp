@@ -478,7 +478,7 @@ const LocationFinderDummy = () => {
           id='images'
           onChange={onMutate}
           max='2'
-          accept='image/*'
+          accept='.jpg,.jpeg'
           multiple
         />
 
