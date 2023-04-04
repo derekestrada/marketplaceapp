@@ -120,8 +120,7 @@ const onFetchMoreListings = async () => {
                 wrapperStyle={{}}
                 wrapperClass=""
                 visible={true}
-            /></div>
-              
+            /></div>  
         ) : listings && listings.length > 0 ? (
           <>
             <ul className='categoryListings'>

@@ -170,7 +170,16 @@ function Category() {
       </header>
 
       {loading ? (
-        <h1>Loading</h1>
+        <div className="loadingScreen"><TailSpin
+        height="80"
+        width="80"
+        color="#fff"
+        ariaLabel="tail-spin-loading"
+        radius="1"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        /></div>
       ) : listings && listings.length > 0 ? (
         <>
           <main>
