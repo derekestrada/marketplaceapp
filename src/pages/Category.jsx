@@ -10,7 +10,7 @@ import {
 } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
-// import Spinner from '../components/Spinner'
+import { TailSpin } from  'react-loader-spinner'
 import ListingItem from '../components/ListingItem'
 
 import { MapContainer, Marker, TileLayer, Popup, useMap} from 'react-leaflet'
