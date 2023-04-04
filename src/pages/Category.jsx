@@ -7,7 +7,6 @@ import {
   orderBy,
   limit,
   startAfter,
-  where
 } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
@@ -44,12 +43,14 @@ function reducer(state, action) {
     }
     case 'Williams Lake' : {
       return {
-        coords: [42.675612, -83.422961
-]
+        coords: [42.675612, -83.422961]
       }
     }
+    // eslint-disable-next-line
+    default: {
+      return
+    }
   }
-  throw Error('Unknown action: ' + action.type);
 }
 
 function Category() {
