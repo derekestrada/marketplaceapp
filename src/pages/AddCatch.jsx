@@ -27,10 +27,10 @@ function AddCatch() {
   const [formData, setFormData] = useState({
     name: '',
     species: '',
-    fishLength: 0,
-    weight: 0,
-    time: "",
-    date: "",
+    fishLength: '',
+    weight: '',
+    time: '',
+    date: '',
     images: {},
     latitude: 0,
     longitude: 0,
@@ -89,7 +89,6 @@ const LocationFinderDummy = () => {
   // eslint-disable-next-line
   const map = useMapEvents({
     click(e) {
-      console.log(e.latlng);
       setPosition(e.latlng)
       setFormData((prevState) => ({
         ...prevState,
@@ -197,10 +196,10 @@ const LocationFinderDummy = () => {
   const onMutate = (e) => {
     let boolean = null
 
-    if (e.target.value === 'true') {
+    if (e.target.value === 'false') {
       boolean = false
     }
-    if (e.target.value === 'false') {
+    if (e.target.value === 'true') {
       boolean = true
     }
 
@@ -270,7 +269,8 @@ const LocationFinderDummy = () => {
           ) : ('')}
 
         <label className='formLabel'>Species</label>
-        <select onChange={onMutate} className='formInputName' value={species} name={species} id="species">
+        <select onChange={onMutate} className='formInputName' value={species} name={species} id="species" required>
+          <option value="" disabled selected hidden>Select Your Species</option>
           <option value="Largemouth Bass">Largemouth Bass</option>
           <option value="Smallmouth Bass">Smallmouth Bass</option>
           <option value="Walleye">Walleye</option>
@@ -465,6 +465,7 @@ const LocationFinderDummy = () => {
           type='text'
           id='notes'
           value={notes}
+          placeholder="Water Temp / Weather"
           onChange={onMutate}
         />
 
@@ -482,7 +483,7 @@ const LocationFinderDummy = () => {
           multiple
         />
 
-      <label className='formLabel'>Favorite?</label>
+      <label className='formLabel'>Trophy?</label>
         <div className='formButtons'>
           <button
             className={offer ? 'formButtonActive' : 'formButton'}

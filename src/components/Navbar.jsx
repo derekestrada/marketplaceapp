@@ -19,7 +19,7 @@ function Navbar() {
         <nav className="navbarNav">
             <ul className="navbarListItems">
                 <li className="navbarListItem" onClick={() => navigate('/')}>
-                    <GiFishBucket fill={pathMatchRoute('/') ? '#2c2c2c' : 'white'} width="55px" height="55px"/> 
+                    <GiFishBucket fill={pathMatchRoute('/') ? '#2c2c2c' : 'white'} width="155px" height="55px"/> 
                     <p className={pathMatchRoute('/') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Catches</p>
                 </li>
                 <li className="navbarListItem" onClick={() => navigate('/add-catch')}>
@@ -27,8 +27,8 @@ function Navbar() {
                     <p className={pathMatchRoute('/add-catch') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Add Fish</p>
                 </li>
                 <li className="navbarListItem" onClick={() => navigate('/offer')}>
-                    <FaTrophy fill={pathMatchRoute('/offer') ? '#2c2c2c' : 'white'} width="36px" height="36px"/>
-                    <p className={pathMatchRoute('/offer') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Favorites</p>
+                    <FaTrophy fill={pathMatchRoute('/offer') ? '#2c2c2c' : 'white'} width="30px" height="30px"/>
+                    <p className={pathMatchRoute('/offer') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Trophies</p>
                 </li>
 
             </ul>

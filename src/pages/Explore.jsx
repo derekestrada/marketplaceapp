@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import lengthCategory from './../assets/jpg/pike.JPG'
 import speciesCategory from './../assets/jpg/brown.JPG'
+import lakeCategory from './../assets/jpg/alconaMap.png'
+import { TailSpin } from  'react-loader-spinner'
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -14,7 +16,6 @@ import {
 } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
-// import Spinner from '../components/Spinner'
 import ListingItem from '../components/ListingItem'
 
 function Explore() {
@@ -91,7 +92,7 @@ const onFetchMoreListings = async () => {
   return (
     <div className="explore">
       <main>
-        <p className="exploreCategoryHeading">Categories</p>
+        <h2 className="exploreCategoryHeading">Fish Tracker</h2>
         <div className="exploreCategories">
           <Link to='/category/size'>
             <img src={lengthCategory} className="exploreCategoryImg" alt="size" />
@@ -101,12 +102,26 @@ const onFetchMoreListings = async () => {
             <img src={speciesCategory} className="exploreCategoryImg" alt="species" />
             <p className="exploreCategoryName">Fish By Species</p>
           </Link>
+          <Link to='/category/lake'>
+            <img src={lakeCategory} className="exploreCategoryImg" alt="lake" />
+            <p className="exploreCategoryName">Fish By Lake</p>
+          </Link>
         </div>
 
         <div>
 
         {loading ? (
-          <h2>Loading</h2>
+            <div className="loadingScreen"><TailSpin
+                height="80"
+                width="80"
+                color="#fff"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+            /></div>
+              
         ) : listings && listings.length > 0 ? (
           <>
             <ul className='categoryListings'>

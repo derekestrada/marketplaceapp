@@ -62,7 +62,7 @@ button {
 
 .primaryButton {
   cursor: pointer;
-  background: #0351a5;
+  background: #0990c3;
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -124,7 +124,7 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #0351a5 transparent #0351a5 transparent;
+  border-color: #0990c3 transparent #0990c3 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -140,6 +140,7 @@ button {
 .pageHeader {
   font-size: 2rem;
   font-weight: 800;
+  margin: 15px 0;
 }
 
 .navbar {
@@ -147,8 +148,8 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 85px;
-  background-color: #0351a5;
+  height: 70px;
+  background-color: #0990c3;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -176,8 +177,8 @@ button {
   align-items: center;
 }
 .navbarListItem svg {
-  width: 30px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
 }
 
 .navbarListItemName,
@@ -220,7 +221,7 @@ button {
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #0351a5;
+  color: #0990c3;
   font-weight: 600;
   text-align: right;
 }
@@ -260,7 +261,7 @@ button {
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: #0351a5;
+  background-color: #0990c3;
   border-radius: 50%;
 }
 @media (min-width: 1024px) {
@@ -297,7 +298,7 @@ button {
 
 .registerLink {
   margin-top: 4rem;
-  color: #0351a5;
+  color: #0990c3;
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
@@ -320,7 +321,7 @@ button {
 }
 
 .exploreCategoryHeading {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .swiper-container {
@@ -380,13 +381,14 @@ button {
 .exploreCategories {
   display: flex;
   justify-content: space-between;
+  gap:10px;
 }
 .exploreCategories a {
   width: 48%;
 }
 
 .exploreCategoryImg {
-  min-height: 115px;
+  min-height: 85px;
   height: 15vw;
   width: 100%;
   border-radius: 1.5rem;
@@ -396,7 +398,9 @@ button {
 
 .exploreCategoryName {
   font-weight: 500;
+  font-size: .8rem;
   text-align: left;
+  margin: 15px 0;
 }
 
 .category {
@@ -418,7 +422,10 @@ button {
 .categoryListingLink {
   display: flex;
   width: 100%;
-  align-items: center;
+}
+
+.categoryListingLink svg {
+  margin-top: 45px;
 }
 
 .categoryListingImg {
@@ -462,7 +469,7 @@ button {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #0351a5;
+  color: #0990c3;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -475,7 +482,11 @@ button {
   max-width: 275px;
 }
 .listingType {
-  margin: 5px 5px 0 5px
+  margin: 3px 3px 0 3px
+}
+
+.listingLake {
+  font-size: 1rem;
 }
 
 .listingSpecies {
@@ -514,6 +525,9 @@ button {
 
 .listingDetails {
   margin-bottom: 1rem;
+}
+.listingDetails .flex {
+  flex-wrap: wrap;
 }
 .leaflet-container {
   width: 100%;
@@ -576,12 +590,12 @@ button {
 }
 .listingType {
   padding: 0.25rem 0.5rem;
-  background-color: #0351a5;
+  background-color: #0990c3;
   color: #ffffff;
   border-radius: 2rem;
   display: inline;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 .listingDetailsList {
@@ -676,7 +690,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #0351a5;
+  background-color: #0990c3;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
@@ -694,7 +708,7 @@ button {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #0351a5;
+  color: #0990c3;
 }
 
 .profileCard {
@@ -799,7 +813,7 @@ button {
   min-width: 75px;
 }
 .formButtonActive {
-  background-color: #0351a5;
+  background-color: #0990c3;
   color: #ffffff;
 }
 
@@ -854,7 +868,7 @@ button {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #0351a5;
+  background-color: #0990c3;
   border: none;
   color: #ffffff;
   font-weight: 600;
@@ -908,9 +922,7 @@ button {
 .explore .categoryListing .listingName, .explore .categoryListing .listingLake {
   display: inline-flex;
 }
-.explore .categoryListing .listingLake {
-  margin-left: 10px;
-}
+
 .explore .categoryListing .infoTags {
   display: none;
 }
@@ -923,4 +935,42 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.leaflet-popup-content p {
+  margin: 0 !important;
+  padding: 0px 5px !important;
+}
+
+.leaflet-popup-content {
+  width: 100px !important;
+  margin:0 !important;
+}
+.leaflet-popup-content img {
+  max-height: 75px !important;
+  object-fit: cover;
+}
+
+.leaflet-popup-content-wrapper {
+  overflow: hidden;
+  padding: 0 !important;
+  padding-bottom: 5px !important;
+}
+
+.lakeList {
+  margin: 10px 0;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0990c3;
+  z-index: 10000;
 }

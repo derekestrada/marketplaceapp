@@ -17,10 +17,6 @@ function ListingItem({listing, id, onDelete}) {
             }
 
             <div className="categoryListingDetails">
-               
-                <p className="categoryListingName listingName">
-                    {listing.name}
-                </p>
                 <p className="categoryListingName listingLake">
                     {listing.lake}
                 </p>
@@ -29,7 +25,7 @@ function ListingItem({listing, id, onDelete}) {
                 </p>
                 <div className="categoryListingInfoDiv listingSize noJustify">
                     <p className="categoryListingInfoName">{listing.fishLength} inches</p>
-                    <p className="categoryListingInfoName listingWeight">{listing.weight === undefined ? '' : '- ' + listing.weight + 'lbs'}</p>
+                    <p className="categoryListingInfoName listingWeight">{listing.weight === '' ? '' : '- ' + listing.weight + 'lbs'}</p>
                 </div>
                 <div className="categoryListingInfoDiv infoTags noJustify">
                     <p className="listingType">{listing.type}</p>

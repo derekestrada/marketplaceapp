@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { getDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import shareIcon from '../assets/svg/shareIcon.svg'
+import { TailSpin } from  'react-loader-spinner'
 
 import { MapContainer, Marker, TileLayer} from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
@@ -41,7 +42,16 @@ function Listing() {
     }, [navigate, params.listingId])
   
     if (loading) {
-      return <h1>Spinner</h1>
+      return <div className="loadingScreen"><TailSpin
+      height="80"
+      width="80"
+      color="#fff"
+      ariaLabel="tail-spin-loading"
+      radius="1"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+    /></div>
     }
 
     if (listing.showMap) {
@@ -54,13 +64,13 @@ function Listing() {
   return (
     <main className='mainListing'>
             <div className="shareIconDiv" onClick={() => {
-                        navigator.clipboard.writeText(window.location.href)
-                        setShareLinkCopied(true)
-                        setTimeout(() => {
-                            setShareLinkCopied(false)
-                        }, 2000) 
-                    }}>
-                <img src={shareIcon} alt="Share Icon" />
+                navigator.clipboard.writeText(window.location.href)
+                setShareLinkCopied(true)
+                setTimeout(() => {
+                    setShareLinkCopied(false)
+                }, 2000) 
+            }}>
+            <img src={shareIcon} alt="Share Icon" />
             </div>
             {shareLinkCopied && <p className='linkCopied'>Link Copied!</p>}
             
@@ -89,6 +99,7 @@ function Listing() {
                         <p className='listingType'>{listing.lure}</p>  
                     </div>
                 </div>
+                {listing.notes !== '' ? (<div className="listingDetails"><p>Notes:</p><p>{listing.notes}</p></div>) : ('')}
                 <div className="mapDetails" style={{height: '300px', overflow:'hidden'}}>
                 <MapContainer center={position} zoom={16} scrollWheelZoom={false}>
                     <TileLayer

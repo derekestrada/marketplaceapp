@@ -5,6 +5,8 @@ import {collection, getDocs, query, where, orderBy, limit} from 'firebase/firest
 import {db} from '../firebase.config'
 import {toast} from 'react-toastify'
 import ListingItem from './../components/ListingItem'
+import { TailSpin } from  'react-loader-spinner'
+
 
 function Offers() {
     const [listings, setListings] = useState(null)
@@ -14,7 +16,6 @@ function Offers() {
         const fetchListings = async () => {
             try {
                 const listingsRef = collection(db, 'listings')
-                console.log(listingsRef)
 
                 const q = query(
                     listingsRef, 
@@ -45,12 +46,21 @@ function Offers() {
    <div className="category">
        <header>
            <p className="pageHeader">
-               Fish
+               Trophies
            </p>
        </header>
 
         {loading ? (
-            console.log('loading')
+            <div className="loadingScreen"><TailSpin
+                height="80"
+                width="80"
+                color="#fff"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+            /></div>
         ) : listings && listings.length > 0 ? (
             <>
                 <main>
