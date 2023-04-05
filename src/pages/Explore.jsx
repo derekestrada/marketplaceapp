@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import lengthCategory from './../assets/jpg/pike.JPG'
 import speciesCategory from './../assets/jpg/brown.JPG'
 import lakeCategory from './../assets/jpg/alconaMap.png'
+import bagLimit from './../assets/jpg/bass.JPG'
 import { TailSpin } from  'react-loader-spinner'
 
 import { useEffect, useState } from 'react'
@@ -96,15 +97,19 @@ const onFetchMoreListings = async () => {
         <div className="exploreCategories">
           <Link to='/category/size'>
             <img src={lengthCategory} className="exploreCategoryImg" alt="size" />
-            <p className="exploreCategoryName">Fish By Size</p>
-          </Link>
-          <Link to='/category/species'>
-            <img src={speciesCategory} className="exploreCategoryImg" alt="species" />
-            <p className="exploreCategoryName">Fish By Species</p>
+            <p className="exploreCategoryName">Fish By Filter</p>
           </Link>
           <Link to='/category/lake'>
             <img src={lakeCategory} className="exploreCategoryImg" alt="lake" />
             <p className="exploreCategoryName">Fish By Lake</p>
+          </Link>
+          <Link to='/bags'>
+            <img src={bagLimit} className="exploreCategoryImg" alt="lake" />
+            <p className="exploreCategoryName">Biggest Bags</p>
+          </Link>
+          <Link to='/category/species'>
+            <img src={speciesCategory} className="exploreCategoryImg" alt="species" />
+            <p className="exploreCategoryName">Fish Of The Year</p>
           </Link>
         </div>
 

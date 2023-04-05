@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom'
-import {ReactComponent as DeleteIcon} from '../assets/svg/deleteIcon.svg'
 import {ReactComponent as StarIcon} from '../assets/svg/starIcon.svg'
 
 function ListingItem({listing, id, onDelete}) {
@@ -45,13 +44,13 @@ function ListingItem({listing, id, onDelete}) {
             )}
        </Link>
 
-       {onDelete && ( 
+       {/* {onDelete && ( 
            <DeleteIcon 
                 className='removeIcon'
                 fill='rgb(231, 76, 60' 
                 onClick={() => onDelete(listing.id, listing.name)}    
             />
-       )}
+       )} */}
    </li>
   )
 }

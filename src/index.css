@@ -974,3 +974,79 @@ button {
   background: #0990c3;
   z-index: 10000;
 }
+
+/* Bag Item / Bag List Styles  */
+
+.bagItem {
+  background:#ddd;
+  width: 85%;
+  margin: 10px auto;
+  list-style-type: none;
+  padding: 15px;
+  border-radius:10px
+}
+.bagItem p {
+  margin: 0;
+}
+.bagItemHeader {
+  justify-content: space-around;
+}
+.bagItemHeader h4, .bagItemHeader h5 {
+  margin: 0;
+}
+.bagItemInfo {
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+}
+.bagItemInfo div {
+  text-align: center;
+  background: white;
+  width: 25%;
+  padding: 5px;
+  min-height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.bagItemInfo h6 {
+  margin: 0;
+  font-weight: 300;
+  color: #777;
+  width: 100%;
+}
+.bagItemInfo p {
+  font-weight: 600;
+  font-size: smaller;
+}
+.fishList {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+.fishList button {
+  color: #777;
+  font-size: .75rem;
+  text-decoration: underline;
+  background: none;
+}
+.fishList ul {
+  margin-left: 0;
+  padding: 0;
+}
+.fishList li {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 4px 0;
+  padding: 2px;
+  font-size: .8rem;
+}
+.fishList li:nth-child(-n+5) {
+  font-weight: 600;
+  font-size: 1rem;
+  background: rgba(9, 145, 195, .45);
+  border:1px #999 solid;
+}
