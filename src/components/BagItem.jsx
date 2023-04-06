@@ -44,7 +44,7 @@ function BagItem({ bag, id }) {
         </div>
         <div>
           <h6>Big Bass</h6>
-          <p>{bigBass}lbs</p>
+          <p>{Number(bigBass).toFixed(2)}lbs</p>
         </div>
         <div>
           <h6>Total Fish</h6>
@@ -60,7 +60,7 @@ function BagItem({ bag, id }) {
             {bag.fish.map((fish, key) => (
               <li key={key}>
                 <span>{fish.species}</span>
-                <span>{fish.weight}</span>
+                <span>{Number(fish.weight).toFixed(2)}</span>
               </li>
             ))}
           </ul>

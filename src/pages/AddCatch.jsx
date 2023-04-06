@@ -40,6 +40,7 @@ function AddCatch() {
     notes: "",
     offer: true,
     showMap: false,
+    trophySize: 0,
   });
 
   const {
@@ -58,6 +59,7 @@ function AddCatch() {
     lake,
     offer,
     showMap,
+    trophySize,
   } = formData;
 
   const auth = getAuth();
@@ -102,7 +104,6 @@ function AddCatch() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
 
     if (images.length > 2) {
@@ -154,6 +155,8 @@ function AddCatch() {
 
     if (images.length > 0) {
       console.log("has images");
+
+      const trophyRating = Number(fishLength) - trophySize;
       const imageUrls = await Promise.all(
         [...images].map((image) => storeImage(image))
       ).catch(() => {
@@ -166,6 +169,7 @@ function AddCatch() {
         ...formData,
         imageUrls,
         timestamp: serverTimestamp(),
+        trophyRating: trophyRating,
       };
 
       formDataCopy.location = notes;
@@ -177,9 +181,11 @@ function AddCatch() {
       toast.success("Listing saved");
       navigate(`/category/${formDataCopy.type}/${docRef.id}`);
     } else {
+      const trophyRating = Number(fishLength) - trophySize;
       const formDataCopy = {
         ...formData,
         timestamp: serverTimestamp(),
+        trophyRating: trophyRating,
       };
 
       formDataCopy.location = notes;
@@ -201,7 +207,36 @@ function AddCatch() {
     if (e.target.value === "true") {
       boolean = true;
     }
-
+    if (e.target.id === "species") {
+      const fishSizes = [
+        {
+          fish: "Largemouth Bass",
+          trophySize: 14,
+        },
+        {
+          fish: "Smallmouth Bass",
+          trophySize: 14,
+        },
+        {
+          fish: "Walleye",
+          trophySize: 17,
+        },
+        {
+          fish: "Northern Pike",
+          trophySize: 28,
+        },
+      ];
+      fishSizes.forEach((fish) => {
+        if (fish.fish === e.target.value) {
+          let trophySize = fish.trophySize;
+          setFormData((prevState) => ({
+            ...prevState,
+            trophySize: trophySize,
+          }));
+        }
+      });
+    }
+    console.log(formData);
     // Files
     if (e.target.files) {
       setFormData((prevState) => ({
@@ -302,13 +337,36 @@ function AddCatch() {
             <option value="" disabled selected hidden>
               Select Your Species
             </option>
-            <option value="Largemouth Bass">Largemouth Bass</option>
-            <option value="Smallmouth Bass">Smallmouth Bass</option>
-            <option value="Walleye">Walleye</option>
-            <option value="Northern Pike">Northern Pike</option>
-            <option value="Perch">Perch</option>
-            <option value="Blue Gill">Blue Gill</option>
-            <option value="Crappie">Crappie</option>
+            <option data="14" value="Largemouth Bass">
+              Largemouth Bass
+            </option>
+            <option data="14" value="Smallmouth Bass">
+              Smallmouth Bass
+            </option>
+            <option data="17" value="Walleye">
+              Walleye
+            </option>
+            <option data="28" value="Northern Pike">
+              Northern Pike
+            </option>
+            <option data="6" value="Perch">
+              Perch
+            </option>
+            <option data="4" value="Blue Gill">
+              Blue Gill
+            </option>
+            <option data="7" value="Crappie">
+              Crappie
+            </option>
+            <option data="12" value="Brown Trout">
+              Brown Trout
+            </option>
+            <option data="11" value="Rainbow Trout">
+              Rainbow Trout
+            </option>
+            <option data="5" value="Brook Trout">
+              Brook Trout
+            </option>
             <option value="Other">Other</option>
           </select>
 

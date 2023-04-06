@@ -66,6 +66,7 @@ function Category() {
   const [loading, setLoading] = useState(false);
   const [lastFetchedListing, setLastFetchedListing] = useState(null);
   const [bagParam, setBagParam] = useState(false);
+  const [trophyParam, setTrophyParam] = useState(false);
   const [state, dispatch] = useReducer(reducer, { coords: mapCenter });
 
   const params = useParams();
@@ -75,15 +76,21 @@ function Category() {
   };
   useEffect(() => {
     params.categoryName === "bag" ? setBagParam(true) : setBagParam(false);
+    params.categoryName === "trophy"
+      ? setTrophyParam(true)
+      : setTrophyParam(false);
 
-    console.log(bagParam);
     const fetchListings = async () => {
-      // let lake = "Alcona Dam Pond"
-      // console.log(lake)
       try {
+        let filterParam = "";
+        if (params.categoryName === "trophy") {
+          filterParam = "trophyRating";
+        } else {
+          filterParam = "fishLength";
+        }
         const listingsRef = collection(db, "listings");
 
-        const q = query(listingsRef, orderBy("fishLength", "desc"), limit(10));
+        const q = query(listingsRef, orderBy(filterParam, "desc"), limit(10));
         const querySnap = await getDocs(q);
 
         const listings = [];
@@ -112,13 +119,18 @@ function Category() {
 
   const onFetchMoreListings = async () => {
     try {
-      // Get reference
+      let filterParam = "";
+      if (params.categoryName === "trophy") {
+        filterParam = "trophySize";
+      } else {
+        filterParam = "fishLength";
+      }
       const listingsRef = collection(db, "listings");
 
       // Create a query
       const q = query(
         listingsRef,
-        orderBy("fishLength", "desc"),
+        orderBy(filterParam, "desc"),
         startAfter(lastFetchedListing),
         limit(10)
       );
@@ -163,7 +175,9 @@ function Category() {
             ? "Sorted By Species"
             : params.categoryName === "lake"
             ? "Sorted By Lake"
-            : setBagParam(true)}
+            : params.categoryName === "trophy"
+            ? "Fish Of The Year"
+            : "Fish"}
         </p>
       </header>
 
@@ -237,6 +251,7 @@ function Category() {
                   listing={listing.data}
                   id={listing.id}
                   key={listing.id}
+                  trophy={trophyParam ? true : false}
                 />
               ))}
             </ul>

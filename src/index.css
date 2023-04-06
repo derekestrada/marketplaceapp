@@ -1051,8 +1051,8 @@ button {
 .fishList li:nth-child(-n + 5) {
   font-weight: 600;
   font-size: 1rem;
-  background: #379683;
-  color: #05386b;
+  background: #05386b;
+  color: white;
   border: 1px #05386b solid;
 }
 .addSpecies,
@@ -1092,4 +1092,11 @@ input[type="date"]:focus::-webkit-datetime-edit {
 }
 .addSubNav .subNavItem p {
   margin-bottom: 0;
+}
+.trophyRating {
+  color: white;
+  background: #05386b;
+  height: fit-content;
+  padding: 20px 10px;
+  margin: 15px 0 0 15px;
 }
