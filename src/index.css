@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -8,7 +8,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f4f8;
   margin: 0;
   box-sizing: border-box;
@@ -40,7 +40,7 @@ button {
   height: 3rem;
   width: 100%;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0 3rem;
   font-size: 1rem;
 }
@@ -194,12 +194,12 @@ button {
 
 .nameInput {
   margin-bottom: 2rem;
-  background: url('./assets/svg/badgeIcon.svg') #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/badgeIcon.svg") #ffffff 2.5% center no-repeat;
 }
 
 .emailInput {
   margin-bottom: 2rem;
-  background: url('./assets/svg/personIcon.svg') #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/personIcon.svg") #ffffff 2.5% center no-repeat;
 }
 
 .passwordInputDiv {
@@ -208,7 +208,7 @@ button {
 
 .passwordInput {
   margin-bottom: 2rem;
-  background: url('./assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/lockIcon.svg") #ffffff 2.5% center no-repeat;
 }
 
 .showPassword {
@@ -381,7 +381,7 @@ button {
 .exploreCategories {
   display: flex;
   justify-content: space-between;
-  gap:10px;
+  gap: 10px;
 }
 .exploreCategories a {
   width: 48%;
@@ -398,7 +398,7 @@ button {
 
 .exploreCategoryName {
   font-weight: 500;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-align: left;
   margin: 15px 0;
 }
@@ -482,7 +482,7 @@ button {
   max-width: 275px;
 }
 .listingType {
-  margin: 3px 3px 0 3px
+  margin: 3px 3px 0 3px;
 }
 
 .listingLake {
@@ -540,14 +540,14 @@ button {
   margin: 5px;
 }
 .listingDetails span {
-  margin-top:5px;
+  margin-top: 5px;
 }
 .listingDetails .listingTags {
-  margin-top:10px
+  margin-top: 10px;
 }
-.listingDetails .listingInfo.time{
-  font-size: .75rem;
-  color: #777
+.listingDetails .listingInfo.time {
+  font-size: 0.75rem;
+  color: #777;
 }
 
 .shareIconDiv {
@@ -686,7 +686,7 @@ button {
 
 .logOut {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
@@ -786,7 +786,7 @@ button {
 .exactLocation {
   display: inline;
   font-weight: 400;
-  font-size: .9rem
+  font-size: 0.9rem;
 }
 
 .formButtons {
@@ -801,7 +801,7 @@ button {
 .formInputSmall,
 .formInputFile,
 .formButtonActive {
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: #ffffff;
   font-weight: 600;
   border-radius: 1rem;
@@ -828,7 +828,7 @@ button {
 .formInputFile {
   border: none;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .formInputSmall,
 .formInputFile {
@@ -897,29 +897,31 @@ button {
 
 /* Custom Explore Styles  */
 
-.explore .categoryListing .noImage,.explore .categoryListing .categoryListingImg {
+.explore .categoryListing .noImage,
+.explore .categoryListing .categoryListingImg {
   width: 50px;
   height: 50px;
-  border-radius:50%;
+  border-radius: 50%;
   object-fit: cover;
   min-width: auto;
-  font-size: .5rem;
+  font-size: 0.5rem;
 }
 .explore .categoryListing .categoryListingDetails {
-  width: 82%
+  width: 82%;
 }
 .explore .categoryListing .categoryListingName {
   font-weight: 500;
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-bottom: 0;
 }
 .explore .categoryListing .listingLake {
-  color:#777;
+  color: #777;
 }
 .explore .categoryListing .listingSpecies {
   margin-top: 0;
 }
-.explore .categoryListing .listingName, .explore .categoryListing .listingLake {
+.explore .categoryListing .listingName,
+.explore .categoryListing .listingLake {
   display: inline-flex;
 }
 
@@ -944,7 +946,7 @@ button {
 
 .leaflet-popup-content {
   width: 100px !important;
-  margin:0 !important;
+  margin: 0 !important;
 }
 .leaflet-popup-content img {
   max-height: 75px !important;
@@ -978,12 +980,12 @@ button {
 /* Bag Item / Bag List Styles  */
 
 .bagItem {
-  background:#ddd;
+  background: #ddd;
   width: 85%;
   margin: 10px auto;
   list-style-type: none;
   padding: 15px;
-  border-radius:10px
+  border-radius: 10px;
 }
 .bagItem p {
   margin: 0;
@@ -991,7 +993,8 @@ button {
 .bagItemHeader {
   justify-content: space-around;
 }
-.bagItemHeader h4, .bagItemHeader h5 {
+.bagItemHeader h4,
+.bagItemHeader h5 {
   margin: 0;
 }
 .bagItemInfo {
@@ -1027,7 +1030,7 @@ button {
 }
 .fishList button {
   color: #777;
-  font-size: .75rem;
+  font-size: 0.75rem;
   text-decoration: underline;
   background: none;
 }
@@ -1042,11 +1045,20 @@ button {
   justify-content: space-between;
   margin: 4px 0;
   padding: 2px;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
-.fishList li:nth-child(-n+5) {
+.fishList li:nth-child(-n + 5) {
   font-weight: 600;
   font-size: 1rem;
-  background: rgba(9, 145, 195, .45);
-  border:1px #999 solid;
+  background: rgba(9, 145, 195, 0.45);
+  border: 1px #999 solid;
+}
+
+.addFishButton {
+  display: inline;
+  width: 125px;
+  margin: 1rem 0;
+  background: #555;
+  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
 }
