@@ -65,7 +65,7 @@ function Category() {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(false);
   const [lastFetchedListing, setLastFetchedListing] = useState(null);
-  const [bagParam, setBagParam] = useState(false);
+  // const [bagParam, setBagParam] = useState(false);
   const [trophyParam, setTrophyParam] = useState(false);
   const [state, dispatch] = useReducer(reducer, { coords: mapCenter });
 
@@ -75,7 +75,7 @@ function Category() {
     dispatch({ type: e.target.value });
   };
   useEffect(() => {
-    params.categoryName === "bag" ? setBagParam(true) : setBagParam(false);
+    // params.categoryName === "bag" ? setBagParam(true) : setBagParam(false);
     params.categoryName === "trophy"
       ? setTrophyParam(true)
       : setTrophyParam(false);
