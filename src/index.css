@@ -62,7 +62,7 @@ button {
 
 .primaryButton {
   cursor: pointer;
-  background: #0990c3;
+  background: #05386b;
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -124,7 +124,7 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #0990c3 transparent #0990c3 transparent;
+  border-color: #05386b transparent #05386b transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -149,7 +149,7 @@ button {
   bottom: 0;
   right: 0;
   height: 70px;
-  background-color: #0990c3;
+  background-color: #05386b;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -189,7 +189,7 @@ button {
   color: white;
 }
 .navbarListItemNameActive {
-  color: #2c2c2c;
+  color: #8ee4af;
 }
 
 .nameInput {
@@ -221,7 +221,7 @@ button {
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #0990c3;
+  color: #05386b;
   font-weight: 600;
   text-align: right;
 }
@@ -261,7 +261,7 @@ button {
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: #0990c3;
+  background-color: #05386b;
   border-radius: 50%;
 }
 @media (min-width: 1024px) {
@@ -298,7 +298,7 @@ button {
 
 .registerLink {
   margin-top: 4rem;
-  color: #0990c3;
+  color: #05386b;
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
@@ -469,7 +469,7 @@ button {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #0990c3;
+  color: #05386b;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -590,7 +590,7 @@ button {
 }
 .listingType {
   padding: 0.25rem 0.5rem;
-  background-color: #0990c3;
+  background-color: #05386b;
   color: #ffffff;
   border-radius: 2rem;
   display: inline;
@@ -690,7 +690,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #0990c3;
+  background-color: #05386b;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
@@ -708,7 +708,7 @@ button {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #0990c3;
+  color: #05386b;
 }
 
 .profileCard {
@@ -813,7 +813,7 @@ button {
   min-width: 75px;
 }
 .formButtonActive {
-  background-color: #0990c3;
+  background-color: #05386b;
   color: #ffffff;
 }
 
@@ -868,7 +868,7 @@ button {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #0990c3;
+  background-color: #05386b;
   border: none;
   color: #ffffff;
   font-weight: 600;
@@ -973,14 +973,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0990c3;
+  background: #05386b;
   z-index: 10000;
 }
 
 /* Bag Item / Bag List Styles  */
 
 .bagItem {
-  background: #ddd;
+  background: #8ee4af;
   width: 85%;
   margin: 10px auto;
   list-style-type: none;
@@ -1044,14 +1044,15 @@ button {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 4px 0;
-  padding: 2px;
+  padding: 2px 5px;
   font-size: 0.8rem;
 }
 .fishList li:nth-child(-n + 5) {
   font-weight: 600;
   font-size: 1rem;
-  background: rgba(9, 145, 195, 0.45);
-  border: 1px #999 solid;
+  background: #379683;
+  color: #05386b;
+  border: 1px #05386b solid;
 }
 
 .addFishButton {
@@ -1061,4 +1062,19 @@ button {
   background: #555;
   font-size: 0.9rem;
   padding: 1rem 1.5rem;
+}
+
+.addSubNav {
+  position: fixed;
+  bottom: -50px;
+  width: 100%;
+  padding: 1rem;
+  background: #379683;
+  transition: 0.5s ease-in;
+}
+.addSubNav.open {
+  bottom: 70px;
+}
+.addSubNav .subNavItem p {
+  margin-bottom: 0;
 }

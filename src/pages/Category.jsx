@@ -183,46 +183,53 @@ function Category() {
       ) : listings && listings.length > 0 ? (
         <>
           <main>
-            <select className="lakeList" onChange={handleChange}>
-              {uniquesLakes.map((listing, key) => (
-                <option key={key}>{listing}</option>
-              ))}
-            </select>
-            <div
-              id="map"
-              className="mapDetails"
-              style={{ height: "300px", overflow: "hidden" }}
-            >
-              <MapContainer
-                center={state.coords}
-                zoom={zoom}
-                scrollWheelZoom={false}
-              >
-                <TileLayer
-                  url="https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
-                  subdomains={["mt1", "mt2", "mt3"]}
-                />
-                {listings.map((listing) => (
-                  // console.log(listing.data.longitude)
-                  <Marker
-                    key={listing.id}
-                    position={[listing.data.latitude, listing.data.longitude]}
-                    icon={mapIcon}
+            {params.categoryName === "lake" && (
+              <>
+                <select className="lakeList" onChange={handleChange}>
+                  {uniquesLakes.map((listing, key) => (
+                    <option key={key}>{listing}</option>
+                  ))}
+                </select>
+                <div
+                  id="map"
+                  className="mapDetails"
+                  style={{ height: "300px", overflow: "hidden" }}
+                >
+                  <MapContainer
+                    center={state.coords}
+                    zoom={zoom}
+                    scrollWheelZoom={false}
                   >
-                    <Popup>
-                      <img
-                        alt={listing.data.name}
-                        style={{ width: "100%" }}
-                        src={listing.data.imageUrls[0]}
-                      />
-                      <p>{listing.data.species}</p>
-                      <p>{listing.data.fishLength}</p>
-                    </Popup>
-                  </Marker>
-                ))}
-                <SetViewOnClick coords={state.coords} />
-              </MapContainer>
-            </div>
+                    <TileLayer
+                      url="https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+                      subdomains={["mt1", "mt2", "mt3"]}
+                    />
+                    {listings.map((listing) => (
+                      // console.log(listing.data.longitude)
+                      <Marker
+                        key={listing.id}
+                        position={[
+                          listing.data.latitude,
+                          listing.data.longitude,
+                        ]}
+                        icon={mapIcon}
+                      >
+                        <Popup>
+                          <img
+                            alt={listing.data.name}
+                            style={{ width: "100%" }}
+                            src={listing.data.imageUrls[0]}
+                          />
+                          <p>{listing.data.species}</p>
+                          <p>{listing.data.fishLength}</p>
+                        </Popup>
+                      </Marker>
+                    ))}
+                    <SetViewOnClick coords={state.coords} />
+                  </MapContainer>
+                </div>
+              </>
+            )}
 
             <ul className="categoryListings">
               {listings.map((listing) => (
