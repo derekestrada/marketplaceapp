@@ -99,7 +99,7 @@ function AddBag() {
           <main>
             <form onSubmit={onSubmit}>
               <div className="formSize flex">
-                <div>
+                <div className="bagLake">
                   <label className="formLabel">Lake</label>
                   <input
                     className="formInputName"
@@ -114,12 +114,12 @@ function AddBag() {
                 <div>
                   <label className="formLabel">Date</label>
                   <input
-                    className="formInputName"
+                    className="formInputName bagDate"
                     type="date"
                     id="date"
                     value={date}
                     onChange={onMutate}
-                    placeholder="Date"
+                    placeholder=""
                     required
                   />
                 </div>
@@ -138,7 +138,7 @@ function AddBag() {
 
                   {fish.map((fishes, key) => (
                     <div key={key} className="formSize flex">
-                      <div>
+                      <div className="addSpecies">
                         <select
                           onChange={(event) => onValUpdate(key, event)}
                           className="formInputName"
@@ -146,9 +146,10 @@ function AddBag() {
                           name={species}
                           id="species"
                           required
+                          defaultValue={"default"}
                         >
-                          <option value="" disabled selected hidden>
-                            Select Your Species
+                          <option value="default" disabled selected hidden>
+                            Select
                           </option>
                           <option value="Largemouth Bass">
                             Largemouth Bass
@@ -158,7 +159,7 @@ function AddBag() {
                           </option>
                         </select>
                       </div>
-                      <div>
+                      <div className="addWeight">
                         <input
                           className="formInputName"
                           type="number"
