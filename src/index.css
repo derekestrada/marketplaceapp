@@ -842,6 +842,7 @@ button {
   padding: 0.9rem 1rem;
   width: 90%;
   max-width: 326px;
+  min-height: 50px;
 }
 
 .formInputAddress {
@@ -984,7 +985,7 @@ button {
 /* Bag Item / Bag List Styles  */
 
 .bagItem {
-  background: #8ee4af;
+  background: #05546b42;
   width: 85%;
   margin: 10px auto;
   list-style-type: none;
