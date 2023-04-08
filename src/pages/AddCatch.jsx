@@ -200,12 +200,22 @@ function AddCatch() {
 
   const onMutate = (e) => {
     let boolean = null;
+    console.log(e.target.type);
 
-    if (e.target.value === "false") {
-      boolean = false;
+    if (e.target.type === "button") {
+      if (e.target.value === "true") {
+        boolean = true;
+      } else {
+        boolean = false;
+      }
     }
-    if (e.target.value === "true") {
-      boolean = true;
+
+    if (e.target.type === "checkbox") {
+      if (e.target.value === "true") {
+        boolean = false;
+      } else {
+        boolean = true;
+      }
     }
     if (e.target.id === "species") {
       const fishSizes = [
@@ -236,7 +246,6 @@ function AddCatch() {
         }
       });
     }
-    console.log(formData);
     // Files
     if (e.target.files) {
       setFormData((prevState) => ({
@@ -292,22 +301,20 @@ function AddCatch() {
             placeholder="Lake"
             required
           />
-          {lake.length > 0 ? (
+          {lake.length > 0 && (
             <>
               <input
                 onChange={onMutate}
                 type="checkbox"
                 id="showMap"
                 value={showMap}
-              />{" "}
+              />
               <label className="formLabel exactLocation">
                 Set Exact Location?
               </label>
             </>
-          ) : (
-            ""
           )}
-          {showMap ? (
+          {showMap && (
             <div
               className="mapDetails"
               style={{ height: "300px", overflow: "hidden" }}
@@ -321,8 +328,6 @@ function AddCatch() {
                 <LocationFinderDummy />
               </MapContainer>
             </div>
-          ) : (
-            ""
           )}
 
           <label className="formLabel">Species</label>

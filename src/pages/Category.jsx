@@ -46,6 +46,11 @@ function reducer(state, action) {
         coords: [42.675612, -83.422961],
       };
     }
+    case "Maceday Lake": {
+      return {
+        coords: [42.689563, -83.431183],
+      };
+    }
     // eslint-disable-next-line
     default: {
       return;
@@ -55,7 +60,7 @@ function reducer(state, action) {
 
 function Category() {
   let mapCenter = [44.569829, -83.816926];
-  let zoom = 13;
+  let zoom = 12;
 
   const mapIcon = new Icon({
     iconUrl: marker,
@@ -219,7 +224,6 @@ function Category() {
                       subdomains={["mt1", "mt2", "mt3"]}
                     />
                     {listings.map((listing) => (
-                      // console.log(listing.data.longitude)
                       <Marker
                         key={listing.id}
                         position={[
